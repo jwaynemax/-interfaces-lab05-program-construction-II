@@ -1,5 +1,16 @@
 package edu.westga.cs6312.climate.interfaces;
 
-public interface Sensor {
 
+/**
+ * Interface for sensor
+ * 
+ * @author justinmaxwell
+ * @version 2/10/23
+ *
+ */
+public interface Sensor {
+	void getName();
+	void getType();
+	void getReading();
+	String setReading();
 }
