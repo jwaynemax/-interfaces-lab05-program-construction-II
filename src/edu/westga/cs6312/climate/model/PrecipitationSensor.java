@@ -23,8 +23,8 @@ public class PrecipitationSensor implements Sensor {
 	 */
 	public PrecipitationSensor(String name, String type) {
 		
-		if (!type.equals("Precip”")) {
-			throw new IllegalArgumentException("Sensor Type must be set to Precip”");
+		if (!type.equals("Precip")) {
+			throw new IllegalArgumentException("Sensor Type must be set to Precip");
 		}
 		
 		this.name = name;
