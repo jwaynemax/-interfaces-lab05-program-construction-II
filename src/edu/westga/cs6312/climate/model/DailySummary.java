@@ -18,6 +18,7 @@ public class DailySummary {
 	
 	private LocalDate date;
 	private ArrayList<HourlyMeasurement> hourlyMeasurements;
+	private ArrayList<Sensor> sensorData;
 	
 	/**
 	 * Creates a new DailySummary, with no hourly measurements, for the given month, day, and year. 
@@ -29,7 +30,7 @@ public class DailySummary {
 	 * @param day the day-of-the-month for this measurement
 	 * @param year the year of this measurement
 	 */
-	public DailySummary(int month, int day, int year) {
+	public DailySummary(int month, int day, int year, ArrayList<Sensor> sensorData) {
 		try {
 			this.date = LocalDate.of(year, month, day);
 		} catch (DateTimeException e) {
@@ -37,6 +38,7 @@ public class DailySummary {
 		}
 		
 		this.hourlyMeasurements = new ArrayList<HourlyMeasurement>();
+		this.sensorData = sensorData;
 	}
 	
 	/**
@@ -115,6 +117,10 @@ public class DailySummary {
 		}
 		
 		this.hourlyMeasurements.add(measurement);
+	}
+	
+	public ArrayList<Sensor> getSensorData() {
+		return this.sensorData;
 	}
 	
 	/**
