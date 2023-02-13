@@ -9,8 +9,8 @@ package edu.westga.cs6312.climate.interfaces;
  *
  */
 public interface Sensor {
-	void getName();
-	void getType();
-	void getReading();
-	String setReading();
+	String getName();
+	String getType();
+	double getReading();
+	void setReading();
 }

@@ -2,6 +2,8 @@ package edu.westga.cs6312.climate.model;
 
 import java.util.ArrayList;
 
+import edu.westga.cs6312.climate.interfaces.Sensor;
+
 /**
  * Represents a Single Weather Station
  * @author justinmaxwell
@@ -13,6 +15,7 @@ public class WeatherStation {
 	private  int dangerouslyHotTemperature = 50;
 	private String name;
 	private ArrayList<DailySummary> summaries;
+	private ArrayList<Sensor> sensors;
 
 	/**
 	 * Constructor for WeatherStation
@@ -29,6 +32,14 @@ public class WeatherStation {
 
 		this.name = stationName;
 		this.summaries = new ArrayList<DailySummary>();	
+		
+		Sensor wind1 = new WindSensor("Wind Sensor 1", "Wind");
+		Sensor wind2 = new WindSensor("Wind Sensor 2", "Wind");
+		Sensor wind3 = new WindSensor("Wind Sensor 3", "Wind");
+		
+		this.sensors.add(wind1);
+		this.sensors.add(wind2);
+		this.sensors.add(wind3);
 	}
 
 	/**
