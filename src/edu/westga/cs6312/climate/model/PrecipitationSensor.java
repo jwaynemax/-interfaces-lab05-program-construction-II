@@ -6,26 +6,25 @@ package edu.westga.cs6312.climate.model;
 import edu.westga.cs6312.climate.interfaces.Sensor;
 
 /**
- * Define Wind Sensor object -- implements Sensor interface
+ * Define Precipitation Sensor object -- implements Sensor interface
  * @author justinmaxwell
  * @version 2/10/23
  */
-public class WindSensor implements Sensor {
+public class PrecipitationSensor implements Sensor {
 	private String name;
 	private String type;
 	private double reading;
-	
-	
+
 	/**
 	 * Construct WindSensor
 	 * @precondition type must be Wind
 	 * @param name
 	 * @param type
 	 */
-	public WindSensor(String name, String type) {
+	public PrecipitationSensor(String name, String type) {
 		
-		if (!type.equals("Wind")) {
-			throw new IllegalArgumentException("Sensor Type must be set to Wind");
+		if (!type.equals("Precip”")) {
+			throw new IllegalArgumentException("Sensor Type must be set to Precip”");
 		}
 		
 		this.name = name;
@@ -51,7 +50,7 @@ public class WindSensor implements Sensor {
 	}
 
 	/**
-	 * return reading in miles per hour
+	 * return reading in inches
 	 */
 	@Override
 	public double getReading() {
@@ -59,11 +58,12 @@ public class WindSensor implements Sensor {
 	}
 	
 	/**
-	 * set reading to a random value between 0 and 199 (max wind speed recorded in antarctica)
+	 * set reading to a random value between 0 and 25 (max precipitation in antarctica)
 	 */
 	@Override
 	public void setReading() {
-		this.reading = (Math.random() * (199)) + 0;
+		this.reading = (Math.random() * (25 - 0)) + 0;
 	}
 
 }
+
