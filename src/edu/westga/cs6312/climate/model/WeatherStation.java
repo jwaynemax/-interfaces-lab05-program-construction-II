@@ -32,6 +32,7 @@ public class WeatherStation {
 
 		this.name = stationName;
 		this.summaries = new ArrayList<DailySummary>();	
+		this.sensors = new ArrayList<>();
 		
 		Sensor wind1 = new WindSensor("Wind Sensor 1", "Wind");
 		Sensor wind2 = new WindSensor("Wind Sensor 2", "Wind");
@@ -72,6 +73,10 @@ public class WeatherStation {
 	 */
 	public ArrayList<DailySummary> getSummaries() {
 		return this.summaries;
+	}
+	
+	public ArrayList<Sensor> getSensors() {
+		return this.sensors;
 	}
 
 	/**

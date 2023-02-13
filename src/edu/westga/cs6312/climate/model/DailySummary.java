@@ -4,6 +4,8 @@ import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import edu.westga.cs6312.climate.interfaces.Sensor;
+
 /**
  * Summary of weather data for a particular day.
  * 
