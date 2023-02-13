@@ -37,9 +37,25 @@ public class WeatherStation {
 		Sensor wind2 = new WindSensor("Wind Sensor 2", "Wind");
 		Sensor wind3 = new WindSensor("Wind Sensor 3", "Wind");
 		
+		Sensor temp1 = new TemperatureSensor("Temp Sensor 1", "Temp");
+		Sensor temp2 = new TemperatureSensor("Temp Sensor 2", "Temp");
+		Sensor temp3 = new TemperatureSensor("Temp Sensor 3", "Temp");
+		
+		Sensor precip1 = new PrecipitationSensor("Precip Sensor 1", "Precip");
+		Sensor precip2 = new PrecipitationSensor("Precip Sensor 2", "Precip");
+		Sensor precip3 = new PrecipitationSensor("Precip Sensor 3", "Precip");
+		
 		this.sensors.add(wind1);
 		this.sensors.add(wind2);
 		this.sensors.add(wind3);
+		
+		this.sensors.add(temp1);
+		this.sensors.add(temp2);
+		this.sensors.add(temp3);
+		
+		this.sensors.add(precip1);
+		this.sensors.add(precip2);
+		this.sensors.add(precip3);
 	}
 
 	/**
