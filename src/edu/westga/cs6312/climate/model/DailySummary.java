@@ -120,6 +120,10 @@ public class DailySummary {
 		this.hourlyMeasurements.add(measurement);
 	}
 	
+	/**
+	 * Gets sensor data created for WeatherStations
+	 * @return list of sensors
+	 */
 	public ArrayList<Sensor> getSensorData() {
 		return this.sensorData;
 	}

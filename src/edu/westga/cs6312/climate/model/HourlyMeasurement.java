@@ -1,5 +1,9 @@
 package edu.westga.cs6312.climate.model;
 
+import java.util.ArrayList;
+
+import edu.westga.cs6312.climate.interfaces.Sensor;
+
 /**
  * Represents temperature and precipitation measurement taken at a time-of-day
  * 
@@ -49,6 +53,51 @@ public class HourlyMeasurement {
 		this.tempInF = tempInF;
 		this.inchesOfPrecipitation = currentPrecipitation;
 		this.windSpeed = currentWindSpeed;
+	}
+	
+	/**
+	 * Creates a new Measurement with the averages from sensors.
+	 * 
+	 * @precondition hourOfDay >= 0 && hourOfDay <= 23
+	 * 
+	 * @postcondition getHourOfDay()==hourOfDay && getTempInF()==tempInF && getInchesOfPrecipitation()==i
+	 * 
+	 * @param hourOfDay the hour of the day, military-style (0 for 12am, 12 for 12pm, 23 for 11pm, etc)
+	 * @param sensors construct hourly measurement with sensor data
+	 */
+	public HourlyMeasurement(int hourOfDay, ArrayList<Sensor> sensors) {
+
+		if (hourOfDay < 0 || hourOfDay > 23) {
+			throw new IllegalArgumentException("hourOfDay must be between 0 and 23 inclusive");
+		}
+
+		this.hourOfDay = hourOfDay;
+		
+		
+		int avgWind = 0;
+		int avgTemp = 0;
+		int avgPrecip = 0;
+		
+		for (Sensor sensor: sensors) {
+			if (sensor.getType().equals("Wind")) {
+				avgWind += sensor.getReading();
+			}
+			if (sensor.getType().equals("Temp")) {
+				avgTemp += sensor.getReading();
+			}
+			if (sensor.getType().equals("Precip")) {
+				avgPrecip += sensor.getReading();
+			}
+		}
+		
+		avgWind = avgWind / 3;
+		avgTemp = avgTemp / 3;
+		avgPrecip = avgPrecip / 3;
+		
+		
+		this.tempInF = avgTemp;
+		this.inchesOfPrecipitation = avgPrecip;
+		this.windSpeed = avgWind;
 	}
 
 	/**
