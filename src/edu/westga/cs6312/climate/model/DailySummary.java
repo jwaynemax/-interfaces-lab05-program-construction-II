@@ -29,6 +29,7 @@ public class DailySummary {
 	 * @param month the month for this measurement
 	 * @param day the day-of-the-month for this measurement
 	 * @param year the year of this measurement
+	 * @param sensorData access sensor data from WeatherStation in DailySummary
 	 */
 	public DailySummary(int month, int day, int year, ArrayList<Sensor> sensorData) {
 		try {

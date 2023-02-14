@@ -9,13 +9,13 @@ public class Main {
 	public static void main(String[] args) {
 		WeatherStation weatherStation = new WeatherStation("Justin's Weather Station");
 		
-//		DailySummary dailySum1 = new DailySummary(2, 13, 2023);
+		DailySummary dailySum1 = new DailySummary(2, 13, 2023, weatherStation.getSensors());
 //		HourlyMeasurement hour1 = new HourlyMeasurement()
 		
-		System.out.println(weatherStation.getSensors());
+		//System.out.println(dailySum1.getSensorData());
 		
-		for (Sensor sensor: weatherStation.getSensors()) {
-			System.out.print(sensor.getName());
+		for (Sensor sensor: dailySum1.getSensorData()) {
+			System.out.print(sensor.getReading() + " ");
 		}
 
 	}
